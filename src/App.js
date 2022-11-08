@@ -45,10 +45,6 @@ function App() {
   const [fee,setFee]=useState(null)
   const [hours,setHours]=useState(null)
   const [days,setDays]=useState(null)
-  // const onChange = ({ target: { value } }) => {
-      
-  //     setValue(value);
-  //   };
 
   
   
