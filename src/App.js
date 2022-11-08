@@ -23,14 +23,7 @@ function App() {
   ];
   const periodArr=['선택하세요','1주 (5만원)','2주 (8만원)','4주 (13만원)']
   const cumArr=['선택하세요','50시간 (7만원)','100시간 (12만원)']
-  const timeTicket={
-    oneHour:2000,
-    twoHour:3000,
-    fourHour:5000,
-    sixHour:7000,
-    eightHour:8000,
-    twelveHour:10000
-  }
+  
   const periodTicket={
     oneWeek:50000,
     twoWeek:80000,
