@@ -19,7 +19,7 @@ function StudyHour({callBack}){
       }) 
     return (
         <div>
-            <h4>하루에 공부할 시간</h4>
+            <h4 style={{fontWeight:'900'}}>하루에 공부할 시간</h4>
             <form onSubmit={onSubmit1}>
                 <input placeholder='1~12사이의 값 입력해주세요' id="value1" type="text" />
                 <input type="submit" value="확인"/>

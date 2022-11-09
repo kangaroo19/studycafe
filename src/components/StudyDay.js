@@ -19,7 +19,7 @@ function StudyDay({callBack}){
       })
     return (
         <div>
-        <h4>일주일 기준 몇일 나올건지</h4>
+        <h4 style={{fontWeight:'900'}}>일주일 기준 몇일 나올건지</h4>
         <form onSubmit={onSubmit2}>
             <input placeholder='1~7사이의 값 입력해주세요' id="value2" type="text" />
             <input type="submit" value="확인"/>

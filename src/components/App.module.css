@@ -1,0 +1,39 @@
+.main{
+    
+    position: relative;
+    top:100px;
+    margin:0 auto;
+    width:1090px;
+    height:500px;
+}
+.radio{
+    margin:0 auto;
+}
+.radioselect{
+    display: flex;
+    justify-content: space-around;
+}
+
+.top_container{
+    justify-content:center;
+    align-items: center;
+    display: flex;
+}
+.middle_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bottom_container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.background{
+    background-color: rgb(227, 226, 226);
+}
+@media screen and (max-width: 1090px) {
+    .main{
+        width:100%;
+    }
+  }

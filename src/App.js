@@ -6,6 +6,7 @@ import { Select } from './components/Select'
 import { StudyHour } from './components/StudyHour';
 import { StudyDay } from './components/StudyDay';
 import { ResultBtn } from './components/ResultBtn';
+import styles from './components/App.module.css'
 
 function App() {
   const optionsWithDisabled = [
@@ -39,40 +40,49 @@ function App() {
   }
   
   return (
-    <div>
-      
-      <h4>필수입력</h4>
-      <h4>사용할 요금제</h4>
-      <Radio.Group
-        onChange={({ target: { value } })=>setValue(value)}
-        options={optionsWithDisabled}
-        optionType="button"
-        buttonStyle="solid"/>
+    <div className={styles.main} style={{textAlign:'center'}}>
+      <h1>스터디카페 계산기</h1>
+      <div className={styles.background}>
+        <h4 style={{fontWeight:'900',textAlign:'center'}}>사용할 요금제</h4>      
+        
+        <div className={styles.top_container}>
+        
+            <Radio.Group
+              onChange={({ target: { value } })=>setValue(value)}
+              options={optionsWithDisabled}
+              optionType="button"
+              buttonStyle="solid"/>
+          
+            <Select 
+            value={value} 
+            periodArr={periodArr} 
+            cumArr={cumArr}
+            callBack={callBack}
+            />
+        </div>
+        
 
-      <Select 
-        value={value} 
-        periodArr={periodArr} 
-        cumArr={cumArr}
-        callBack={callBack}
-        />
+        
+        <div className={styles.middle_container}>
+          <StudyHour
+            callBack={callBack}
+            />
 
-      <StudyHour
-        callBack={callBack}
-        />
-
-      {(value==='기간권')
-      ?<StudyDay callBack={callBack}
-      />
-      :null
-      }
-
-      <ResultBtn
-        value={value}
-        fee={fee}
-        hours={hours}
-        days={days}
-      />
-      
+          {(value==='기간권')
+          ?<StudyDay callBack={callBack}
+          />
+          :null
+          }
+        </div>
+        <div className={styles.bottom_container}>
+          <ResultBtn
+            value={value}
+            fee={fee}
+            hours={hours}
+            days={days}
+          />
+        </div>
+      </div>    
       
     </div>
   );

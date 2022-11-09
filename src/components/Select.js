@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import styles from './Select.module.css'
 function Select({value,periodArr,cumArr,callBack}){
     const [fee,setFee]=useState(null)
     const [type,setType]=useState(null)
@@ -16,7 +17,7 @@ function Select({value,periodArr,cumArr,callBack}){
         callBack(fee,type)
     })
     return (
-        <select onChange={feeClick}>
+        <select className={styles.select} onChange={feeClick}>
         {(value==='기간권')
         ?
         periodArr.map((v,i)=>(

@@ -134,7 +134,7 @@ function ResultBtn({value,fee,hours,days}){
     }
     return (
         <div>
-            <button onClick={resultClick}>계산</button>
+            <button onClick={resultClick} style={{marginBottom:'10px'}}>계산</button>
             {(value==='정액권')?
                 <div>
                     <h4>{result1}</h4>
