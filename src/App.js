@@ -6,7 +6,6 @@ import { Select } from './components/Select'
 import { StudyHour } from './components/StudyHour';
 import { StudyDay } from './components/StudyDay';
 import { ResultBtn } from './components/ResultBtn';
-import {Result} from './components/Result'
 
 function App() {
   const optionsWithDisabled = [
@@ -24,16 +23,7 @@ function App() {
   const periodArr=['선택하세요','1주 (5만원)','2주 (8만원)','4주 (13만원)']
   const cumArr=['선택하세요','50시간 (7만원)','100시간 (12만원)']
   
-  const periodTicket={
-    oneWeek:50000,
-    twoWeek:80000,
-    fourWeek:130000
-  }
   
-  const cumTicket={
-    fifthyHour:70000,
-    hundredHour:120000
-  }
   const [value, setValue] = useState(null);
   const [fee,setFee]=useState(null)
   const [hours,setHours]=useState(null)
