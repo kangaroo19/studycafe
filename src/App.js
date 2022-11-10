@@ -6,8 +6,9 @@ import { Select } from './components/Select'
 import { StudyHour } from './components/StudyHour';
 import { StudyDay } from './components/StudyDay';
 import { ResultBtn } from './components/ResultBtn';
-import styles from './components/App.module.css'
-
+import styles from './components/App.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faWonSign} from '@fortawesome/free-solid-svg-icons';
 function App() {
   const optionsWithDisabled = [
     {
@@ -41,7 +42,11 @@ function App() {
   
   return (
     <div className={styles.main} style={{textAlign:'center'}}>
+      <div className={styles.fee_container}>
+        <FontAwesomeIcon icon={faWonSign}/>
+      </div>
       <h1>스터디카페 계산기</h1>
+      
       <div className={styles.background}>
         <h4 style={{fontWeight:'900',textAlign:'center'}}>사용할 요금제</h4>      
         
@@ -61,15 +66,17 @@ function App() {
             />
         </div>
         
-
         
         <div className={styles.middle_container}>
           <StudyHour
+            value={value}
             callBack={callBack}
             />
 
           {(value==='기간권')
-          ?<StudyDay callBack={callBack}
+          ?<StudyDay
+            value={value} 
+            callBack={callBack}
           />
           :null
           }

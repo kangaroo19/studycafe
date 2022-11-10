@@ -1,9 +1,9 @@
 import { useState,useEffect } from "react"
 import $ from 'jquery';
 
-function StudyDay({callBack}){
+function StudyDay({value,callBack}){
     const [day,setDays]=useState(null)
-    const [type,setType]=useState(null)
+    const [type,setType]=useState(null) //어떤 자식컴포넌트에서 부모 컴포넌트로 보냈는지 판별 위한 식별자
     const onSubmit2=(event)=>{
         event.preventDefault()
         const day=Number($('#value2').val())
@@ -14,7 +14,10 @@ function StudyDay({callBack}){
         setDays(day)
         setType('StudyDay')
       }
-      useEffect(()=>{
+      useEffect(()=>{ //value값 바뀌면 input 초기화
+        $('#value').val('')
+      },[value])
+      useEffect(()=>{ //부모 컴포넌트로 값 보냄
         callBack(day,type)
       })
     return (

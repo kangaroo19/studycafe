@@ -65,6 +65,7 @@ function ResultBtn({value,fee,hours,days}){
         fee=null
         hours=null
         days=null
+        console.log(fee)
     }
     useEffect(()=>{
         change()
@@ -113,13 +114,14 @@ function ResultBtn({value,fee,hours,days}){
                     setResult4(`${parseInt(time/hours)}일 동안 ${answer[0][0]}시간권 (${answer[1][0]*parseInt(time/hours)}원) 사용  = ${answer[0][1]*parseInt(time/hours)+ticketCost[time%hours]}원`)
                 }
             }
-            if(answer[1].length===2){
-                if(time%hours!==0){
-                    setResult5(`${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 (${answer[1][0]*parseInt(time/hours)}원) + 1일 동안 ${ticketHour[time%hours][0]}시간권 (${ticketCost[time%hours]}) = ${answer[0][1]*parseInt(time/hours)+ticketCost[time%hours]}원`)
-                }  
-                else{
-                    setResult5(`${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 = ${answer[1][0]*parseInt(time/hours)}원`)
-                }
+            if(answer[1].length===2){ //최적화 된 값은 공부시간을 넘기때문에 나머지 하루에 공부할 시간 포함 안해도됨
+                setResult5(`권장 -> ${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 = ${answer[1][0]*parseInt(time/hours)}원`)
+                // if(time%hours!==0){
+                //     setResult5(`${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 (${answer[1][0]*parseInt(time/hours)}원) + 1일 동안 ${ticketHour[time%hours][0]}시간권 (${ticketCost[time%hours]}) = ${answer[0][1]*parseInt(time/hours)+ticketCost[time%hours]}원`)
+                // }  
+                // else{
+                //     setResult5(`${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 = ${answer[1][0]*parseInt(time/hours)}원`)
+                // }
             }
             else{
                 setResult5(null)
@@ -131,6 +133,7 @@ function ResultBtn({value,fee,hours,days}){
             setResult1(`선택하신 요금제는 ${fee} 이고 총 공부 시간은 ${Number(fee[0])*hours*days}시간 입니다.`)
             setResult2(`${ticketHour[hours]}시간 (${ticketCost[hours]}원), ${Number(fee[0])*days}일 동안 사용 = ${Number(fee[0])*days*ticketCost[hours]}원`)
         }
+        console.log(value,fee,hours,days)
     }
     return (
         <div>
