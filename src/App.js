@@ -6,6 +6,7 @@ import { Select } from './components/Select'
 import { StudyHour } from './components/StudyHour';
 import { StudyDay } from './components/StudyDay';
 import { ResultBtn } from './components/ResultBtn';
+import { Fee } from './components/Fee';
 import styles from './components/App.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faWonSign} from '@fortawesome/free-solid-svg-icons';
@@ -30,8 +31,10 @@ function App() {
   const [fee,setFee]=useState(null)
   const [hours,setHours]=useState(null)
   const [days,setDays]=useState(null)
-
-  
+  const [state,setState]=useState(true)
+  const stateChange=()=>{
+    setState(!state)
+  }
   
   
   function callBack(event,type){ //자식 컴포넌트의 데이터 부모 컴포넌트(app)로 보내기 위함
@@ -42,17 +45,22 @@ function App() {
   
   return (
     <div className={styles.main} style={{textAlign:'center'}}>
-      <div className={styles.fee_container}>
+      <div className={styles.fee_button} onClick={stateChange}>
         <FontAwesomeIcon icon={faWonSign}/>
-      </div>
+        </div>  
+        {state?null:
+        <Fee/>}
+      
+
       <h1>스터디카페 계산기</h1>
       
       <div className={styles.background}>
-        <h4 style={{fontWeight:'900',textAlign:'center'}}>사용할 요금제</h4>      
+        <h4 style={{fontWeight:'900',textAlign:'center',paddingTop:'10px'}}>사용할 요금제</h4>      
         
         <div className={styles.top_container}>
         
             <Radio.Group
+              
               onChange={({ target: { value } })=>setValue(value)}
               options={optionsWithDisabled}
               optionType="button"

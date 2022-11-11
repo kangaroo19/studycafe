@@ -1,4 +1,7 @@
 import {useEffect, useState} from 'react'
+import styles from './ResultBtn.module.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCalculator} from '@fortawesome/free-solid-svg-icons';
 const ticketHour=[0,[1],[2],[2,1],[4],[4,1],[6],[6,1],[8],[8,1],[8,2],[8,2,1],[12],[12,1],[12,2],[12,2,1],[12,4],[12,4,1],[12,6],[12,6,1],[12,8],[12,8,1],[12,8,2],[12,8,2,1],[12,12]]
 const ticketCost=[0]
 
@@ -65,7 +68,6 @@ function ResultBtn({value,fee,hours,days}){
         fee=null
         hours=null
         days=null
-        console.log(fee)
     }
     useEffect(()=>{
         change()
@@ -93,7 +95,6 @@ function ResultBtn({value,fee,hours,days}){
             setLoading(false)    
             time=(fee[0]==='5')?50:100
             cost=(time===50)?70000:120000
-            console.log(answer)
             setResult1(`선택하신 요금제는 ${fee} 이고 하루에 공부할 시간은 ${hours}시간 입니다.`)
             setResult2(`${parseInt(time/hours)}일 안에 사용가능`)
             if(time%hours!==0){ //공부할시간이 나누어 떨어지지 않을때
@@ -129,15 +130,13 @@ function ResultBtn({value,fee,hours,days}){
             return setLoading(true)
         }
         else if(value==='기간권'){
-            console.log(12323)
             setResult1(`선택하신 요금제는 ${fee} 이고 총 공부 시간은 ${Number(fee[0])*hours*days}시간 입니다.`)
             setResult2(`${ticketHour[hours]}시간 (${ticketCost[hours]}원), ${Number(fee[0])*days}일 동안 사용 = ${Number(fee[0])*days*ticketCost[hours]}원`)
         }
-        console.log(value,fee,hours,days)
     }
     return (
         <div>
-            <button onClick={resultClick} style={{marginBottom:'10px'}}>계산</button>
+            <button className={styles.result_button} onClick={resultClick} style={{marginBottom:'10px'}}>계산하기</button>
             {(value==='정액권')?
                 <div>
                     <h4>{result1}</h4>

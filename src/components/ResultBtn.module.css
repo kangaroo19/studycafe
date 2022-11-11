@@ -1,3 +1,18 @@
-.result-button{
+.result_button{
     margin:0 auto;
+    width:80px;
+    background-color: white;
+    font-family: 'KOFIHDrLEEJWTTF-B';
+    border-radius: 10px;
+}
+.result_button:hover{
+    background-color: #1890ff;
+    transition: all 0.5s;
+    border:#1890ff 2px solid
+}
+@font-face {
+    font-family: 'KOFIHDrLEEJWTTF-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/KOFIHDrLEEJWTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }

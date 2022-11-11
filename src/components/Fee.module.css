@@ -1,0 +1,31 @@
+.background{
+    width:250px;
+    z-index: 999;
+    height:500px;
+    display: flex;
+    justify-content: center;
+    top:50px;
+    left:10px;
+    position: fixed;
+    background-image: url('background2.jpg');
+    box-shadow: 5px 5px;
+    
+}
+.font{
+    font-size: 1.2rem;
+}
+.container{
+    font-family: 'KOFIHDrLEEJWTTF-B';
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@font-face {
+    font-family: 'KOFIHDrLEEJWTTF-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/KOFIHDrLEEJWTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}

@@ -9,24 +9,23 @@ function Select({value,periodArr,cumArr,callBack}){
 
     const feeClick=(e)=>{
         e.preventDefault()
-        if(e.target.value==='선택하세요'){
-            alert('유효한 값을 선택해 주세요')
-            return
-        }
+        // if(e.target.value==='선택하세요'){
+        //     alert('유효한 값을 선택해 주세요')
+        //     return
+        // }
         setFee(e.target.value)
         setType('Select')
     }
-      useEffect(()=>{
+
+    useEffect(()=>{
+        $('#select').val('선택하세요') //value 값이 바뀌면 옵션태그 첫번째 위치로 초기화
         setFee(null)
       },[value])
-    
-    // useEffect(()=>{
-    // },[value])
     useEffect(()=>{
         callBack(fee,type)
     })
     return (
-        <select defaultValue='선택하세요' id='select' className={styles.select} onChange={feeClick}>
+        <select id='select' defaultValue='선택하세요'  className={styles.select} onChange={feeClick}>
         {(value==='기간권')
         ?
         periodArr.map((v,i)=>(

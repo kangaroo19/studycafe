@@ -1,19 +1,25 @@
+
 .main{
     
     position: relative;
     top:100px;
     margin:0 auto;
-    width:1090px;
+    width:800px;
     height:500px;
+}
+h1{
+    color: rgb(233, 187, 187);
+    font-family: 'GangwonEduPowerExtraBoldA';
 }
 .radio{
     margin:0 auto;
+    border:2px solid black;
 }
 .radioselect{
     display: flex;
     justify-content: space-around;
 }
-.fee_container{
+.fee_button{
     background-color: white;
     border:2px solid black;
     border-radius: 5px;
@@ -23,6 +29,11 @@
     position: fixed;
     top:10px;
     left:10px;
+}
+.fee_button:hover{
+    background-color: #1890ff;
+    transition: all 0.5s;
+    border:#1890ff solid 2px;
 }
 .top_container{
     justify-content:center;
@@ -41,10 +52,21 @@
     margin-top: 20px;
 }
 .background{
+    background-image: url('background.jpg');
+    background-size: 500px;
     background-color: rgb(227, 226, 226);
+    border-radius: 10px;
 }
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 800px) {
     .main{
         width:100%;
     }
   }
+
+
+  @font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
