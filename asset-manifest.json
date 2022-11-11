@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/studycafe/static/css/main.238d9b0a.css",
+    "main.js": "/studycafe/static/js/main.4571bd8d.js",
+    "static/media/background2.jpg": "/studycafe/static/media/background2.06f73d0dc8eed9c8b8ff.jpg",
+    "static/media/library.webp": "/studycafe/static/media/library.df3d851b3a700bbc01e7.webp",
+    "static/media/background.jpg": "/studycafe/static/media/background.112a30f3b0c526d91c9d.jpg",
+    "index.html": "/studycafe/index.html",
+    "main.238d9b0a.css.map": "/studycafe/static/css/main.238d9b0a.css.map",
+    "main.4571bd8d.js.map": "/studycafe/static/js/main.4571bd8d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.238d9b0a.css",
+    "static/js/main.4571bd8d.js"
+  ]
+}
