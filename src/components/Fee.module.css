@@ -13,6 +13,11 @@
 }
 .font{
     font-size: 1.2rem;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 .container{
     font-family: 'KOFIHDrLEEJWTTF-B';
@@ -22,7 +27,13 @@
     justify-content: space-between;
     align-items: center;
 }
-
+li{
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
 @font-face {
     font-family: 'KOFIHDrLEEJWTTF-B';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/KOFIHDrLEEJWTTF-B.woff2') format('woff2');

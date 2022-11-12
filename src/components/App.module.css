@@ -57,6 +57,13 @@ h1{
     background-color: rgb(227, 226, 226);
     border-radius: 10px;
 }
+h1,h4{
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
 @media screen and (max-width: 800px) {
     .main{
         width:100%;
