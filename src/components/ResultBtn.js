@@ -76,7 +76,6 @@ function ResultBtn({value,fee,hours,days}){
     let cost=0 //정액권 가격
     const resultClick=()=>{
 
-        console.log(value,fee,hours,days)
         
         if(value===null && fee===null && hours===null && days===null){ //잘못된 값 처리
             alert('정확한 값을 입력해 주세요')
@@ -116,13 +115,7 @@ function ResultBtn({value,fee,hours,days}){
                 }
             }
             if(answer[1].length===2){ //최적화 된 값은 공부시간을 넘기때문에 나머지 하루에 공부할 시간 포함 안해도됨
-                setResult5(`권장 -> ${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 = ${answer[1][0]*parseInt(time/hours)}원`)
-                // if(time%hours!==0){
-                //     setResult5(`${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 (${answer[1][0]*parseInt(time/hours)}원) + 1일 동안 ${ticketHour[time%hours][0]}시간권 (${ticketCost[time%hours]}) = ${answer[0][1]*parseInt(time/hours)+ticketCost[time%hours]}원`)
-                // }  
-                // else{
-                //     setResult5(`${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 = ${answer[1][0]*parseInt(time/hours)}원`)
-                // }
+                setResult5(`${parseInt(time/hours)}일 동안 ${answer[1][1]}시간권 = ${answer[1][0]*parseInt(time/hours)}원`)
             }
             else{
                 setResult5(null)
